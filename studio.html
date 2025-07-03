@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Camera Magic Studio - Cinematic Wedding Photography</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#C5A572", secondary: "#F5F5F5" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+
+      body {
+          background-color:white;
+          color:black;
+          font-family: 'Poppins', sans-serif;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+          font-family: 'Playfair Display', serif;
+      }
+
+      .hero-section {
+          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('https://readdy.ai/api/search-image?query=cinematic%20Indian%20wedding%20photography%20moment%20with%20beautiful%20bride%20and%20groom%20in%20traditional%20attire%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=1920&height=1080&seq=1&orientation=landscape');
+          background-position: center;
+          background-size: cover;
+          background-attachment: fixed;
+      }
+
+      .glass-card {
+          background: rgba(10, 10, 10, 0.7);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(197, 165, 114, 0.2);
+      }
+
+      .glass-nav {
+          background: rgba(10, 10, 10, 0.8);
+          backdrop-filter: blur(10px);
+          border-bottom: 1px solid rgba(197, 165, 114, 0.2);
+      }
+
+      .gallery-item {
+          overflow: hidden;
+          transition: all 0.5s ease;
+      }
+
+      .gallery-item img {
+          transition: all 0.5s ease;
+          filter: grayscale(0.7);
+      }
+
+      .gallery-item:hover img {
+          transform: scale(1.05);
+          filter: grayscale(0);
+      }
+
+      .service-card {
+          transition: all 0.3s ease;
+          background: rgba(20, 20, 20, 0.8);
+          border: 1px solid rgba(197, 165, 114, 0.2);
+      }
+
+      .service-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 15px 30px rgba(197, 165, 114, 0.1);
+          border: 1px solid rgba(197, 165, 114, 0.4);
+      }
+
+      .testimonial-card {
+          background: rgba(20, 20, 20, 0.8);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(197, 165, 114, 0.2);
+      }
+
+      .glow-button {
+          position: relative;
+          overflow: hidden;
+          transition: all 0.3s ease;
+          box-shadow: 0 0 15px rgba(197, 165, 114, 0.3);
+      }
+
+      .glow-button:hover {
+          box-shadow: 0 0 25px rgba(197, 165, 114, 0.5);
+      }
+
+      .glow-button::after {
+          content: '';
+          position: absolute;
+          top: -50%;
+          left: -50%;
+          width: 200%;
+          height: 200%;
+          background: radial-gradient(circle, rgba(197, 165, 114, 0.3) 0%, rgba(197, 165, 114, 0) 70%);
+          opacity: 0;
+          transition: opacity 0.5s ease;
+      }
+
+      .glow-button:hover::after {
+          opacity: 1;
+      }
+
+      .form-input {
+          background: rgba(20, 20, 20, 0.8);
+          border: 1px solid rgba(197, 165, 114, 0.3);
+          transition: all 0.3s ease;
+      }
+
+      .form-input:focus {
+          border: 1px solid rgba(197, 165, 114, 0.8);
+          box-shadow: 0 0 10px rgba(197, 165, 114, 0.3);
+      }
+
+      .section-divider {
+          height: 1px;
+          background: linear-gradient(90deg, rgba(197, 165, 114, 0) 0%, rgba(197, 165, 114, 0.5) 50%, rgba(197, 165, 114, 0) 100%);
+      }
+
+      .fade-in {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      .fade-in.visible {
+          opacity: 1;
+          transform: translateY(0);
+      }
+
+      .lightbox {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.9);
+          z-index: 1000;
+          justify-content: center;
+          align-items: center;
+      }
+
+      .lightbox img {
+          max-width: 90%;
+          max-height: 90%;
+          object-fit: contain;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Alpine.js (Add in <head> section once) -->
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+<!-- Navigation -->
+<nav x-data="{ open: false }" class="fixed w-full z-50 bg-black bg-opacity-80 backdrop-blur-md">
+  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="#" class="text-2xl font-['Pacifico'] text-primary">
+      The Camera Magic
+    </a>
+
+    <!-- Desktop Nav -->
+    <div class="hidden md:flex space-x-8">
+      <a href="#home" class="nav-link text-white hover:text-primary transition-colors">Home</a>
+      <a href="#about" class="nav-link text-white hover:text-primary transition-colors">About</a>
+      <a href="#portfolio" class="nav-link text-white hover:text-primary transition-colors">Portfolio</a>
+      <a href="#services" class="nav-link text-white hover:text-primary transition-colors">Services</a>
+      <a href="#testimonials" class="nav-link text-white hover:text-primary transition-colors">Testimonials</a>
+      <a href="#contact" class="nav-link text-white hover:text-primary transition-colors">Contact</a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button @click="open = !open" class="md:hidden w-10 h-10 flex items-center justify-center text-white">
+      <i :class="open ? 'ri-close-line' : 'ri-menu-line'" class="ri-2x"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Nav Links -->
+  <div x-show="open" @click.away="open = false" class="md:hidden bg-black bg-opacity-95 px-6 pb-4 pt-2 space-y-4">
+    <a href="#home" class="block text-white hover:text-primary transition-colors">Home</a>
+    <a href="#about" class="block text-white hover:text-primary transition-colors">About</a>
+    <a href="#portfolio" class="block text-white hover:text-primary transition-colors">Portfolio</a>
+    <a href="#services" class="block text-white hover:text-primary transition-colors">Services</a>
+    <a href="#testimonials" class="block text-white hover:text-primary transition-colors">Testimonials</a>
+    <a href="#contact" class="block text-white hover:text-primary transition-colors">Contact</a>
+  </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="hero-section min-h-screen flex items-center justify-center"
+    >
+      <div class="container mx-auto px-6 text-center">
+        <div class="fade-in">
+          <h1
+            class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-secondary leading-tight"
+          >
+            Turning Moments <br />Into <span class="text-primary">Magic</span>
+          </h1>
+          <p
+            class="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-secondary opacity-90"
+          >
+            Capturing timeless wedding memories with cinematic elegance and
+            artistic vision
+          </p>
+         <button
+  class="glow-button bg-white text-black font-medium px-8 py-3 !rounded-button text-lg hover:bg-black hover:text-white transition-all duration-300 whitespace-nowrap"
+>
+  View Portfolio
+</button>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section (Black & White Theme) -->
+<section id="about" class="py-20 relative overflow-hidden bg-white text-black">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16 fade-in">
+      <h2 class="text-4xl md:text-5xl font-bold text-black mb-4">
+        Our Story
+      </h2>
+      <div class="section-divider w-24 mx-auto mb-6 border-b-2 border-white"></div>
+      <p class="text-lg opacity-80 max-w-3xl mx-auto">
+        The passion behind every frame we capture
+      </p>
+    </div>
+
+    <div
+      class="glass-card bg-[#111111] rounded-lg p-8 md:p-12 grid md:grid-cols-2 gap-12 fade-in"
+    >
+      <!-- Text Section -->
+      <div class="flex flex-col justify-center">
+        <h3 class="text-2xl md:text-3xl font-semibold text-white mb-6">
+          The Camera Magic Studio
+        </h3>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          Founded in 2015, The Camera Magic Studio has established itself as
+          a premier wedding photography and cinematography company,
+          specializing in capturing the essence of Indian weddings with a
+          unique cinematic approach.
+        </p>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          Our team of passionate photographers and filmmakers are dedicated
+          to transforming your special moments into timeless works of art
+          that you'll cherish for generations.
+        </p>
+        <p class="text-gray-300 leading-relaxed">
+          We believe that every love story is unique, and we strive to
+          capture the authentic emotions, cultural richness, and intimate
+          moments that make your wedding day truly magical.
+        </p>
+      </div>
+
+      <!-- Image Section -->
+      <div class="grid grid-cols-2 gap-4 relative">
+        <div class="transform translate-y-8">
+          <img
+            src="https://readdy.ai/api/search-image?query=professional%20Indian%20wedding%20photographer%20capturing%20a%20moment%20with%20a%20professional%20camera%20cinematic%20lighting%20dramatic%20composition%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=600&height=800&seq=2&orientation=portrait"
+            alt="Wedding Photographer"
+            class="rounded-lg shadow-lg w-full h-full object-cover"
+          />
+        </div>
+        <div class="transform -translate-y-8">
+          <img
+            src="https://readdy.ai/api/search-image?query=beautiful%20Indian%20bride%20and%20groom%20portrait%20in%20traditional%20wedding%20attire%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=600&height=800&seq=3&orientation=portrait"
+            alt="Indian Wedding Couple"
+            class="rounded-lg shadow-lg w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Portfolio Gallery -->
+    <section id="portfolio" class="py-20 bg-white bg-opacity-70">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16 fade-in">
+          <h2 class="text-4xl md:text-5xl font-bold text-black mb-4">
+            Our Work
+          </h2>
+          <div class="section-divider w-24 mx-auto mb-6"></div>
+          <p class="text-lg text-black opacity-80 max-w-3xl mx-auto">
+            A glimpse into our cinematic wedding photography
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 fade-in"
+        >
+          <div
+            class="gallery-item rounded-lg overflow-hidden cursor-pointer"
+            data-img="https://readdy.ai/api/search-image?query=elegant%20Indian%20wedding%20ceremony%20with%20bride%20and%20groom%20in%20traditional%20attire%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=4&orientation=squarish"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=elegant%20Indian%20wedding%20ceremony%20with%20bride%20and%20groom%20in%20traditional%20attire%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=4&orientation=squarish"
+              alt="Wedding Ceremony"
+              class="w-full h-80 object-cover object-top"
+            />
+          </div>
+          <div
+            class="gallery-item rounded-lg overflow-hidden cursor-pointer"
+            data-img="https://readdy.ai/api/search-image?query=romantic%20pre-wedding%20photoshoot%20of%20Indian%20couple%20in%20beautiful%20location%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=5&orientation=squarish"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=romantic%20pre-wedding%20photoshoot%20of%20Indian%20couple%20in%20beautiful%20location%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=5&orientation=squarish"
+              alt="Pre-Wedding Shoot"
+              class="w-full h-80 object-cover object-top"
+            />
+          </div>
+          <div
+            class="gallery-item rounded-lg overflow-hidden cursor-pointer"
+            data-img="https://readdy.ai/api/search-image?query=emotional%20moment%20during%20Indian%20wedding%20with%20family%20members%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=6&orientation=squarish"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=emotional%20moment%20during%20Indian%20wedding%20with%20family%20members%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=6&orientation=squarish"
+              alt="Emotional Moment"
+              class="w-full h-80 object-cover object-top"
+            />
+          </div>
+          <div
+            class="gallery-item rounded-lg overflow-hidden cursor-pointer"
+            data-img="https://readdy.ai/api/search-image?query=traditional%20Indian%20wedding%20rituals%20with%20bride%20and%20groom%20in%20traditional%20attire%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=7&orientation=squarish"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=traditional%20Indian%20wedding%20rituals%20with%20bride%20and%20groom%20in%20traditional%20attire%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=7&orientation=squarish"
+              alt="Traditional Rituals"
+              class="w-full h-80 object-cover object-top"
+            />
+          </div>
+          <div
+            class="gallery-item rounded-lg overflow-hidden cursor-pointer"
+            data-img="https://readdy.ai/api/search-image?query=elegant%20wedding%20reception%20setup%20for%20Indian%20wedding%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=8&orientation=squarish"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=elegant%20wedding%20reception%20setup%20for%20Indian%20wedding%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=8&orientation=squarish"
+              alt="Reception Setup"
+              class="w-full h-80 object-cover object-top"
+            />
+          </div>
+          <div
+            class="gallery-item rounded-lg overflow-hidden cursor-pointer"
+            data-img="https://readdy.ai/api/search-image?query=bride%20getting%20ready%20for%20Indian%20wedding%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=9&orientation=squarish"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=bride%20getting%20ready%20for%20Indian%20wedding%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=9&orientation=squarish"
+              alt="Bride Getting Ready"
+              class="w-full h-80 object-cover object-top"
+            />
+          </div>
+          <div
+            class="gallery-item rounded-lg overflow-hidden cursor-pointer"
+            data-img="https://readdy.ai/api/search-image?query=wedding%20jewelry%20and%20accessories%20for%20Indian%20bride%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=10&orientation=squarish"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=wedding%20jewelry%20and%20accessories%20for%20Indian%20bride%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=10&orientation=squarish"
+              alt="Wedding Jewelry"
+              class="w-full h-80 object-cover object-top"
+            />
+          </div>
+          <div
+            class="gallery-item rounded-lg overflow-hidden cursor-pointer"
+            data-img="https://readdy.ai/api/search-image?query=wedding%20couple%20portrait%20at%20sunset%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=11&orientation=squarish"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=wedding%20couple%20portrait%20at%20sunset%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=11&orientation=squarish"
+              alt="Sunset Portrait"
+              class="w-full h-80 object-cover object-top"
+            />
+          </div>
+          <div
+            class="gallery-item rounded-lg overflow-hidden cursor-pointer"
+            data-img="https://readdy.ai/api/search-image?query=wedding%20dance%20performance%20at%20Indian%20wedding%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=12&orientation=squarish"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=wedding%20dance%20performance%20at%20Indian%20wedding%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=12&orientation=squarish"
+              alt="Dance Performance"
+              class="w-full h-80 object-cover object-top"
+            />
+          </div>
+        </div>
+
+      <div class="text-center mt-12 fade-in">
+  <button
+    class="glow-button bg-white text-black font-medium px-8 py-3 !rounded-button text-lg hover:bg-black hover:text-white transition-all duration-300 whitespace-nowrap"
+  >
+    View Full Gallery
+  </button>
+</div>
+
+        </div>
+      </div>
+    </section>
+
+   <!-- Services Section -->
+<section id="services" class="py-20 bg-black text-white">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16 fade-in">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Our Services</h2>
+      <div class="w-24 h-1 bg-white mx-auto mb-6"></div>
+      <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+        Comprehensive wedding photography and cinematography solutions
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 fade-in">
+      <!-- Card 1 -->
+      <div class="border border-white bg-white bg-opacity-5 hover:bg-opacity-10 rounded-lg p-8 flex flex-col items-center text-center transition-all duration-300">
+        <div class="w-16 h-16 flex items-center justify-center bg-white bg-opacity-10 rounded-full mb-6">
+          <i class="ri-camera-3-line ri-xl text-white"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-white mb-4">Wedding Photography</h3>
+        <p class="text-gray-300 opacity-80 mb-6">
+          Capture every emotion and detail of your special day with our premium wedding photography services.
+        </p>
+        <a href="#" class="text-white hover:underline transition duration-300 mt-auto flex items-center">
+          Learn More <i class="ri-arrow-right-line ri-sm ml-2"></i>
+        </a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="border border-white bg-white bg-opacity-5 hover:bg-opacity-10 rounded-lg p-8 flex flex-col items-center text-center transition-all duration-300">
+        <div class="w-16 h-16 flex items-center justify-center bg-white bg-opacity-10 rounded-full mb-6">
+          <i class="ri-movie-line ri-xl text-white"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-white mb-4">Pre-Wedding Films</h3>
+        <p class="text-gray-300 opacity-80 mb-6">
+          Tell your love story through cinematic pre-wedding films shot at breathtaking locations.
+        </p>
+        <a href="#" class="text-white hover:underline transition duration-300 mt-auto flex items-center">
+          Learn More <i class="ri-arrow-right-line ri-sm ml-2"></i>
+        </a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="border border-white bg-white bg-opacity-5 hover:bg-opacity-10 rounded-lg p-8 flex flex-col items-center text-center transition-all duration-300">
+        <div class="w-16 h-16 flex items-center justify-center bg-white bg-opacity-10 rounded-full mb-6">
+          <i class="ri-film-line ri-xl text-white"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-white mb-4">Cinematic Highlights</h3>
+        <p class="text-gray-300 opacity-80 mb-6">
+          Relive your wedding day through beautifully crafted cinematic highlight films.
+        </p>
+        <a href="#" class="text-white hover:underline transition duration-300 mt-auto flex items-center">
+          Learn More <i class="ri-arrow-right-line ri-sm ml-2"></i>
+        </a>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="border border-white bg-white bg-opacity-5 hover:bg-opacity-10 rounded-lg p-8 flex flex-col items-center text-center transition-all duration-300">
+        <div class="w-16 h-16 flex items-center justify-center bg-white bg-opacity-10 rounded-full mb-6">
+          <i class="ri-book-open-line ri-xl text-white"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-white mb-4">Luxury Albums</h3>
+        <p class="text-gray-300 opacity-80 mb-6">
+          Preserve your memories in handcrafted premium albums designed to last generations.
+        </p>
+        <a href="#" class="text-white hover:underline transition duration-300 mt-auto flex items-center">
+          Learn More <i class="ri-arrow-right-line ri-sm ml-2"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+   <section class="relative bg-cover bg-center bg-no-repeat py-20 font-[Poppins]" style="background-image: url('piclumen-1751461677297.png ');">
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 text-[#F5F5F5]">
+    <h2 class="text-4xl md:text-5xl font-bold text-white text-center mb-12">Why Choose Us</h2>
+    
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- Professional Excellence (Black) -->
+      <div class="bg-black p-6 rounded-lg text-center">
+        <div class="mb-4">
+          <i class="ri-thumb-up-line text-3xl text-white border border-white p-2 rounded-md"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">Professional Excellence</h3>
+        <p class="text-sm text-gray-300">
+          Our team of experts is well-versed in the latest photographic techniques, ensuring top-tier quality and professionalism in every project.
+        </p>
+      </div>
+
+      <!-- Customized Solutions (White) -->
+      <div class="bg-white p-6 rounded-lg text-center text-black">
+        <div class="mb-4">
+          <i class="ri-star-line text-3xl text-black border border-black p-2 rounded-md"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-2">Customized Solutions</h3>
+        <p class="text-sm text-gray-700">
+          We tailor every shoot to meet the unique needs of our clients, ensuring that your vision is perfectly captured.
+        </p>
+      </div>
+
+      <!-- Advanced Technology (Black) -->
+      <div class="bg-black p-6 rounded-lg text-center">
+        <div class="mb-4">
+          <i class="ri-flag-line text-3xl text-white border border-white p-2 rounded-md"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">Advanced Technology</h3>
+        <p class="text-sm text-gray-300">
+          Utilizing the latest equipment and software, we guarantee high-resolution images with stunning clarity and color accuracy.
+        </p>
+      </div>
+
+      <!-- Versatile Portfolio (White) -->
+      <div class="bg-white p-6 rounded-lg text-center text-black">
+        <div class="mb-4">
+          <i class="ri-edit-2-line text-3xl text-black border border-black p-2 rounded-md"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-2">Versatile Portfolio</h3>
+        <p class="text-sm text-gray-700">
+          From corporate events to personal portraits, our extensive portfolio demonstrates our capability to handle a variety of photography genres with expertise.
+        </p>
+      </div>
+
+      <!-- Timely Delivery (Black) -->
+      <div class="bg-black p-6 rounded-lg text-center">
+        <div class="mb-4">
+          <i class="ri-user-line text-3xl text-white border border-white p-2 rounded-md"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">Timely Delivery</h3>
+        <p class="text-sm text-gray-300">
+          We understand the importance of deadlines and strive to deliver all projects on time without compromising quality.
+        </p>
+      </div>
+
+      <!-- Competitive Pricing (White) -->
+      <div class="bg-white p-6 rounded-lg text-center text-black">
+        <div class="mb-4">
+          <i class="ri-emotion-happy-line text-3xl text-black border border-black p-2 rounded-md"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-2">Competitive Pricing</h3>
+        <p class="text-sm text-gray-700">
+          Our pricing structure is designed to offer the best value for professional photography services, ensuring that you get premium results within your budget.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- Testimonials Section -->
+<section id="testimonials" class="py-20 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16 fade-in">
+      <h2 class="text-4xl md:text-5xl font-bold text-black mb-4">
+        Client Love
+      </h2>
+      <div class="w-24 h-1 bg-black mx-auto mb-6"></div>
+      <p class="text-lg text-gray-700 opacity-80 max-w-3xl mx-auto">
+        What our couples say about their experience
+      </p>
+    </div>
+
+    <div class="relative fade-in">
+      <div class="testimonial-slider overflow-hidden">
+        <div
+          class="testimonial-track flex transition-transform duration-500"
+          id="testimonial-track"
+        >
+          <!-- Card 1 -->
+          <div
+            class="testimonial-card rounded-lg border border-black p-8 min-w-full md:min-w-[calc(50%-1rem)] lg:min-w-[calc(33.333%-1rem)] mx-2 bg-white shadow-md"
+          >
+            <div class="flex items-center mb-6">
+              <div
+                class="w-16 h-16 rounded-full overflow-hidden border-2 border-black mr-4"
+              >
+                <img
+                  src="https://readdy.ai/api/search-image?query=portrait%20of%20young%20Indian%20woman%20smiling%20professional%20headshot%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality&width=200&height=200&seq=13&orientation=squarish"
+                  alt="Priya Sharma"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-black">
+                  Priya Sharma
+                </h4>
+                <div class="flex text-yellow-500">
+                  <i class="ri-star-fill ri-sm"></i>
+                  <i class="ri-star-fill ri-sm"></i>
+                  <i class="ri-star-fill ri-sm"></i>
+                  <i class="ri-star-fill ri-sm"></i>
+                  <i class="ri-star-fill ri-sm"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-800 opacity-90 italic">
+              "The Camera Magic Studio exceeded all our expectations. Their
+              attention to detail and ability to capture emotions is
+              unmatched. Our wedding album is a work of art that we'll
+              cherish forever."
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="testimonial-card rounded-lg border border-black p-8 min-w-full md:min-w-[calc(50%-1rem)] lg:min-w-[calc(33.333%-1rem)] mx-2 bg-white shadow-md"
+          >
+            <div class="flex items-center mb-6">
+              <div
+                class="w-16 h-16 rounded-full overflow-hidden border-2 border-black mr-4"
+              >
+                <img
+                  src="https://readdy.ai/api/search-image?query=portrait%20of%20young%20Indian%20couple%20smiling%20professional%20headshot%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality&width=200&height=200&seq=14&orientation=squarish"
+                  alt="Arjun and Meera"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-black">
+                  Arjun & Meera
+                </h4>
+                <div class="flex text-yellow-500">
+                  <i class="ri-star-fill ri-sm"></i>
+                  <i class="ri-star-fill ri-sm"></i>
+                  <i class="ri-star-fill ri-sm"></i>
+                  <i class="ri-star-fill ri-sm"></i>
+                  <i class="ri-star-fill ri-sm"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-800 opacity-90 italic">
+              "Our pre-wedding film was absolutely magical! The team was
+              professional, creative, and made us feel so comfortable. The
+              cinematic quality of their work is truly outstanding."
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="testimonial-card rounded-lg border border-black p-8 min-w-full md:min-w-[calc(50%-1rem)] lg:min-w-[calc(33.333%-1rem)] mx-2 bg-white shadow-md"
+          >
+            <div class="flex items-center mb-6">
+              <div
+                class="w-16 h-16 rounded-full overflow-hidden border-2 border-black mr-4"
+              >
+                <img
+                  src="https://readdy.ai/api/search-image?query=portrait%20of%20young%20Indian%20man%20smiling%20professional%20headshot%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality&width=200&height=200&seq=15&orientation=squarish"
+                  alt="Vikram Malhotra"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-black">
+                  Vikram Malhotra
+                </h4>
+                <div class="flex text-yellow-500">
+                  <i class="ri-star-fill ri-sm"></i>
+                  <i class="ri-star-fill ri-sm"></i>
+                  <i class="ri-star-fill ri-sm"></i>
+                  <i class="ri-star-fill ri-sm"></i>
+                  <i class="ri-star-fill ri-sm"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-800 opacity-90 italic">
+              "Working with The Camera Magic Studio was the best decision we
+              made for our wedding. They captured moments we didn't even
+              know happened. Their cinematic approach truly sets them
+              apart."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <button
+        class="absolute top-1/2 -left-4 transform -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-black bg-opacity-20 text-black rounded-full hover:bg-opacity-40 transition-all duration-300 focus:outline-none"
+        id="prev-testimonial"
+      >
+        <i class="ri-arrow-left-s-line ri-lg"></i>
+      </button>
+
+      <button
+        class="absolute top-1/2 -right-4 transform -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-black bg-opacity-20 text-black rounded-full hover:bg-opacity-40 transition-all duration-300 focus:outline-none"
+        id="next-testimonial"
+      >
+        <i class="ri-arrow-right-s-line ri-lg"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Contact Section -->
+<section id="contact" class="py-20 bg-black">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16 fade-in">
+      <h2 class="serif text-4xl font-bold mb-4 text-white">Get In Touch</h2>
+      <p class="max-w-2xl mx-auto text-gray-300">
+        Ready to discuss your wedding photography needs? We'd love to hear from you.
+      </p>
+    </div>
+
+    <div class="flex flex-col md:flex-row gap-12 fade-in">
+      <!-- Form Column -->
+      <div class="md:w-1/2">
+        <form id="contact-form" class="space-y-6">
+          <div>
+            <label for="name" class="block mb-2 text-sm font-medium text-white">Your Name</label>
+            <input type="text" id="name" class="w-full p-3 rounded border border-white bg-transparent text-white placeholder-gray-400 focus:ring-2 focus:ring-white" placeholder="John & Jane Doe" required />
+          </div>
+          <div>
+            <label for="email" class="block mb-2 text-sm font-medium text-white">Email Address</label>
+            <input type="email" id="email" class="w-full p-3 rounded border border-white bg-transparent text-white placeholder-gray-400 focus:ring-2 focus:ring-white" placeholder="your@email.com" required />
+          </div>
+          <div>
+            <label for="phone" class="block mb-2 text-sm font-medium text-white">Phone Number</label>
+            <input type="tel" id="phone" class="w-full p-3 rounded border border-white bg-transparent text-white placeholder-gray-400 focus:ring-2 focus:ring-white" placeholder="+91 98765 43210" />
+          </div>
+          <div>
+            <label for="event-date" class="block mb-2 text-sm font-medium text-white">Wedding Date</label>
+            <input type="date" id="event-date" class="w-full p-3 rounded border border-white bg-transparent text-white placeholder-gray-400 focus:ring-2 focus:ring-white" />
+          </div>
+          <div>
+            <label for="message" class="block mb-2 text-sm font-medium text-white">Your Message</label>
+            <textarea id="message" rows="4" class="w-full p-3 rounded border border-white bg-transparent text-white placeholder-gray-400 focus:ring-2 focus:ring-white" placeholder="Tell us about your wedding plans..."></textarea>
+          </div>
+          <button type="submit" class="w-full bg-white text-black py-3 px-6 rounded hover:bg-gray-200 transition-colors !rounded-button whitespace-nowrap">
+            Send Message
+          </button>
+        </form>
+      </div>
+
+      <!-- Contact Info Column -->
+      <div class="md:w-1/2">
+        <div class="h-full flex flex-col justify-between">
+          <div>
+            <h3 class="serif text-2xl font-semibold mb-6 text-white">Contact Information</h3>
+            <div class="space-y-4 mb-8 text-white">
+              <div class="flex items-start">
+                <div class="w-10 h-10 flex items-center justify-center text-white mr-4">
+                  <i class="ri-map-pin-line ri-lg"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium mb-1">Studio Address</h4>
+                  <p class="text-gray-300">42 Harmony Lane, Jubilee Hills<br />Hyderabad, 500033<br />India</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="w-10 h-10 flex items-center justify-center text-white mr-4">
+                  <i class="ri-phone-line ri-lg"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium mb-1">Call Us</h4>
+                  <p class="text-gray-300">+91 98765 43210</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="w-10 h-10 flex items-center justify-center text-white mr-4">
+                  <i class="ri-mail-line ri-lg"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium mb-1">Email Us</h4>
+                  <p class="text-gray-300">hello@cameramagicstudio.com</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="w-10 h-10 flex items-center justify-center text-white mr-4">
+                  <i class="ri-time-line ri-lg"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium mb-1">Working Hours</h4>
+                  <p class="text-gray-300">
+                    Monday - Friday: 10:00 AM - 6:00 PM<br />Saturday: By appointment only
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social & WhatsApp -->
+          <div>
+            <h3 class="serif text-2xl font-semibold mb-6 text-white">Connect With Us</h3>
+            <div class="flex space-x-4 mb-8">
+              <a href="#" class="social-icon w-10 h-10 flex items-center justify-center text-white hover:text-gray-400">
+                <i class="ri-instagram-line ri-lg"></i>
+              </a>
+              <a href="#" class="social-icon w-10 h-10 flex items-center justify-center text-white hover:text-gray-400">
+                <i class="ri-facebook-line ri-lg"></i>
+              </a>
+              <a href="#" class="social-icon w-10 h-10 flex items-center justify-center text-white hover:text-gray-400">
+                <i class="ri-pinterest-line ri-lg"></i>
+              </a>
+              <a href="#" class="social-icon w-10 h-10 flex items-center justify-center text-white hover:text-gray-400">
+                <i class="ri-youtube-line ri-lg"></i>
+              </a>
+            </div>
+            <a href="https://wa.me/919876543210" class="flex items-center justify-center bg-[#25D366] text-white py-3 px-6 rounded hover:bg-opacity-90 transition-colors !rounded-button whitespace-nowrap">
+              <div class="w-5 h-5 flex items-center justify-center mr-2">
+                <i class="ri-whatsapp-fill"></i>
+              </div>
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- WhatsApp Floating Button -->
+    <a
+      href="https://wa.me/919876543210"
+      class="fixed bottom-8 right-8 w-16 h-16 flex items-center justify-center bg-green-500 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 z-50"
+    >
+      <i class="ri-whatsapp-line ri-2x text-white"></i>
+    </a>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <span
+        class="close cursor-pointer absolute top-6 right-6 text-white text-4xl"
+        >&times;</span
+      >
+      <img id="lightbox-img" src="" alt="Enlarged Image" />
+    </div>
+
+   <!-- Footer -->
+<footer class="py-12 bg-[#f5f5f5]">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+      <!-- Logo + About -->
+      <div>
+        <a href="#" class="text-black text-3xl font-['Pacifico'] mb-6 inline-block">logo</a>
+        <p class="text-gray-600 mb-6">
+          Turning moments into cinematic magic since 2015. Specializing in luxury wedding photography and films.
+        </p>
+        <div class="flex space-x-4">
+          <a href="#" class="text-black hover:text-gray-700 transition-colors duration-300"><i class="ri-instagram-line ri-lg"></i></a>
+          <a href="#" class="text-black hover:text-gray-700 transition-colors duration-300"><i class="ri-facebook-fill ri-lg"></i></a>
+          <a href="#" class="text-black hover:text-gray-700 transition-colors duration-300"><i class="ri-youtube-fill ri-lg"></i></a>
+          <a href="#" class="text-black hover:text-gray-700 transition-colors duration-300"><i class="ri-pinterest-fill ri-lg"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-lg font-semibold text-black mb-6">Quick Links</h4>
+        <ul class="space-y-3">
+          <li><a href="#home" class="text-gray-600 hover:text-primary transition-colors duration-300">Home</a></li>
+          <li><a href="#about" class="text-gray-600 hover:text-primary transition-colors duration-300">About</a></li>
+          <li><a href="#portfolio" class="text-gray-600 hover:text-primary transition-colors duration-300">Portfolio</a></li>
+          <li><a href="#services" class="text-gray-600 hover:text-primary transition-colors duration-300">Services</a></li>
+          <li><a href="#testimonials" class="text-gray-600 hover:text-primary transition-colors duration-300">Testimonials</a></li>
+          <li><a href="#contact" class="text-gray-600 hover:text-primary transition-colors duration-300">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Services Links -->
+      <div>
+        <h4 class="text-lg font-semibold text-black mb-6">Services</h4>
+        <ul class="space-y-3">
+          <li><a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">Wedding Photography</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">Pre-Wedding Films</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">Cinematic Highlights</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">Luxury Albums</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">Destination Weddings</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">Event Coverage</a></li>
+        </ul>
+      </div>
+
+      <!-- Subscribe -->
+      <div>
+        <h4 class="text-lg font-semibold text-black mb-6">Subscribe</h4>
+        <p class="text-gray-600 mb-6">
+          Subscribe to our newsletter for the latest updates and exclusive offers.
+        </p>
+       <form class="flex flex-col sm:flex-row sm:items-center gap-3 w-full">
+  <input
+    type="email"
+    placeholder="Your Email"
+    class="w-full sm:flex-1 px-4 py-2 bg-white text-gray-800 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
+  />
+  <button
+    type="submit"
+    class="bg-black text-white px-6 py-2 rounded hover:bg-opacity-90 transition-all duration-300 whitespace-nowrap"
+  >
+    Subscribe
+  </button>
+</form>
+
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="section-divider w-full mb-8"></div>
+
+    <!-- Bottom Row -->
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <p class="text-gray-500 mb-4 md:mb-0">
+        © 2025 The Camera Magic Studio. All Rights Reserved. Design & Developed By Digital Success Solutions
+      </p>
+      <div class="flex space-x-6">
+        <a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">Privacy Policy</a>
+        <a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">Terms of Service</a>
+        <a href="#" class="text-gray-600 hover:text-primary transition-colors duration-300">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script id="navigation-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const nav = document.querySelector("nav");
+
+        mobileMenuButton.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+        });
+
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 50) {
+            nav.classList.add("py-2");
+            nav.classList.remove("py-4");
+          } else {
+            nav.classList.add("py-4");
+            nav.classList.remove("py-2");
+          }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
+              mobileMenu.classList.add("hidden");
+            }
+
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      });
+    </script>
+
+    <script id="scroll-animation-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const fadeElements = document.querySelectorAll(".fade-in");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          {
+            threshold: 0.1,
+          },
+        );
+
+        fadeElements.forEach((element) => {
+          observer.observe(element);
+        });
+      });
+    </script>
+
+    <script id="testimonial-slider-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const track = document.getElementById("testimonial-track");
+        const slides = track.children;
+        const prevButton = document.getElementById("prev-testimonial");
+        const nextButton = document.getElementById("next-testimonial");
+        let currentIndex = 0;
+        let slideWidth;
+        let slidesToShow;
+
+        function updateSlidesToShow() {
+          if (window.innerWidth < 768) {
+            slidesToShow = 1;
+          } else if (window.innerWidth < 1024) {
+            slidesToShow = 2;
+          } else {
+            slidesToShow = 3;
+          }
+
+          slideWidth = track.clientWidth / slidesToShow;
+
+          Array.from(slides).forEach((slide) => {
+            slide.style.minWidth = `${slideWidth}px`;
+          });
+
+          updateSlidePosition();
+        }
+
+        function updateSlidePosition() {
+          track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        }
+
+        prevButton.addEventListener("click", () => {
+          if (currentIndex > 0) {
+            currentIndex--;
+            updateSlidePosition();
+          }
+        });
+
+        nextButton.addEventListener("click", () => {
+          if (currentIndex < slides.length - slidesToShow) {
+            currentIndex++;
+            updateSlidePosition();
+          }
+        });
+
+        window.addEventListener("resize", updateSlidesToShow);
+        updateSlidesToShow();
+
+        // Auto slide
+        let interval = setInterval(() => {
+          if (currentIndex < slides.length - slidesToShow) {
+            currentIndex++;
+          } else {
+            currentIndex = 0;
+          }
+          updateSlidePosition();
+        }, 5000);
+
+        // Pause on hover
+        track.addEventListener("mouseenter", () => {
+          clearInterval(interval);
+        });
+
+        track.addEventListener("mouseleave", () => {
+          interval = setInterval(() => {
+            if (currentIndex < slides.length - slidesToShow) {
+              currentIndex++;
+            } else {
+              currentIndex = 0;
+            }
+            updateSlidePosition();
+          }, 5000);
+        });
+      });
+    </script>
+
+    <script id="lightbox-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const galleryItems = document.querySelectorAll(".gallery-item");
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const close = document.querySelector(".close");
+
+        galleryItems.forEach((item) => {
+          item.addEventListener("click", function () {
+            const imgSrc = this.getAttribute("data-img");
+            lightboxImg.src = imgSrc;
+            lightbox.style.display = "flex";
+            document.body.style.overflow = "hidden";
+          });
+        });
+
+        close.addEventListener("click", function () {
+          lightbox.style.display = "none";
+          document.body.style.overflow = "auto";
+        });
+
+        lightbox.addEventListener("click", function (e) {
+          if (e.target === lightbox) {
+            lightbox.style.display = "none";
+            document.body.style.overflow = "auto";
+          }
+        });
+      });
+    </script>
+
+    <script id="form-validation-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const contactForm = document.getElementById("contact-form");
+
+        if (contactForm) {
+          contactForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const message = document.getElementById("message").value;
+
+            if (!name || !email || !phone || !message) {
+              alert("Please fill in all fields");
+              return;
+            }
+
+            if (!validateEmail(email)) {
+              alert("Please enter a valid email address");
+              return;
+            }
+
+            alert("Thank you for your message! We will get back to you soon.");
+            contactForm.reset();
+          });
+        }
+
+        function validateEmail(email) {
+          const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return re.test(email);
+        }
+      });
+    </script>
+  </body>
+</html>
