@@ -179,6 +179,9 @@
           max-height: 90%;
           object-fit: contain;
       }
+
+
+      
     </style>
   </head>
   <body>
@@ -207,8 +210,7 @@
       <i :class="open ? 'ri-close-line' : 'ri-menu-line'" class="ri-2x"></i>
     </button>
   </div>
-
-
+  
 
   <!-- Mobile Nav Links -->
   <div x-show="open" @click.away="open = false" class="md:hidden bg-black bg-opacity-95 px-6 pb-4 pt-2 space-y-4">
@@ -310,122 +312,146 @@
 </section>
 
 
-   <!-- AOS CSS (in <head>) -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Portfolio Gallery -->
+    <section id="portfolio" class="py-20 bg-white bg-opacity-70">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16 fade-in">
+          <h2 class="text-4xl md:text-5xl font-bold text-black mb-4">
+            Our Work
+          </h2>
+          <div class="section-divider w-24 mx-auto mb-6"></div>
+          <p class="text-lg text-black opacity-80 max-w-3xl mx-auto">
+            A glimpse into our cinematic wedding photography
+          </p>
+        </div>
 
-<!-- Portfolio Gallery -->
-<section id="portfolio" class="py-20 bg-white bg-opacity-70">
-  <div class="container mx-auto px-6">
-    <div class="text-center mb-16 fade-in" data-aos="fade-up">
-      <h2 class="text-4xl md:text-5xl font-bold text-black mb-4">
-        Our Work
-      </h2>
-      <div class="section-divider w-24 mx-auto mb-6"></div>
-      <p class="text-lg text-black opacity-80 max-w-3xl mx-auto">
-        A glimpse into our cinematic wedding photography
-      </p>
-    </div>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 fade-in"
+        >
+          <div
+            class="gallery-item rounded-lg overflow-hidden cursor-pointer"
+            data-img="https://readdy.ai/api/search-image?query=elegant%20Indian%20wedding%20ceremony%20with%20bride%20and%20groom%20in%20traditional%20attire%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=4&orientation=squarish"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=elegant%20Indian%20wedding%20ceremony%20with%20bride%20and%20groom%20in%20traditional%20attire%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=4&orientation=squarish"
+              alt="Wedding Ceremony"
+              class="w-full h-80 object-cover object-top"
+            />
+          </div>
+          <div
+            class="gallery-item rounded-lg overflow-hidden cursor-pointer"
+            data-img="https://readdy.ai/api/search-image?query=romantic%20pre-wedding%20photoshoot%20of%20Indian%20couple%20in%20beautiful%20location%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=5&orientation=squarish"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=romantic%20pre-wedding%20photoshoot%20of%20Indian%20couple%20in%20beautiful%20location%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=5&orientation=squarish"
+              alt="Pre-Wedding Shoot"
+              class="w-full h-80 object-cover object-top"
+            />
+          </div>
+          <div
+            class="gallery-item rounded-lg overflow-hidden cursor-pointer"
+            data-img="https://readdy.ai/api/search-image?query=emotional%20moment%20during%20Indian%20wedding%20with%20family%20members%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=6&orientation=squarish"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=emotional%20moment%20during%20Indian%20wedding%20with%20family%20members%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=6&orientation=squarish"
+              alt="Emotional Moment"
+              class="w-full h-80 object-cover object-top"
+            />
+          </div>
+          <div
+            class="gallery-item rounded-lg overflow-hidden cursor-pointer"
+            data-img="https://readdy.ai/api/search-image?query=traditional%20Indian%20wedding%20rituals%20with%20bride%20and%20groom%20in%20traditional%20attire%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=7&orientation=squarish"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=traditional%20Indian%20wedding%20rituals%20with%20bride%20and%20groom%20in%20traditional%20attire%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=7&orientation=squarish"
+              alt="Traditional Rituals"
+              class="w-full h-80 object-cover object-top"
+            />
+          </div>
+          <div
+            class="gallery-item rounded-lg overflow-hidden cursor-pointer"
+            data-img="https://readdy.ai/api/search-image?query=elegant%20wedding%20reception%20setup%20for%20Indian%20wedding%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=8&orientation=squarish"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=elegant%20wedding%20reception%20setup%20for%20Indian%20wedding%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=8&orientation=squarish"
+              alt="Reception Setup"
+              class="w-full h-80 object-cover object-top"
+            />
+          </div>
+          <div
+            class="gallery-item rounded-lg overflow-hidden cursor-pointer"
+            data-img="https://readdy.ai/api/search-image?query=bride%20getting%20ready%20for%20Indian%20wedding%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=9&orientation=squarish"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=bride%20getting%20ready%20for%20Indian%20wedding%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=9&orientation=squarish"
+              alt="Bride Getting Ready"
+              class="w-full h-80 object-cover object-top"
+            />
+          </div>
+          <div
+            class="gallery-item rounded-lg overflow-hidden cursor-pointer"
+            data-img="https://readdy.ai/api/search-image?query=wedding%20jewelry%20and%20accessories%20for%20Indian%20bride%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=10&orientation=squarish"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=wedding%20jewelry%20and%20accessories%20for%20Indian%20bride%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=10&orientation=squarish"
+              alt="Wedding Jewelry"
+              class="w-full h-80 object-cover object-top"
+            />
+          </div>
+          <div
+            class="gallery-item rounded-lg overflow-hidden cursor-pointer"
+            data-img="https://readdy.ai/api/search-image?query=wedding%20couple%20portrait%20at%20sunset%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=11&orientation=squarish"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=wedding%20couple%20portrait%20at%20sunset%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=11&orientation=squarish"
+              alt="Sunset Portrait"
+              class="w-full h-80 object-cover object-top"
+            />
+          </div>
+          <div
+            class="gallery-item rounded-lg overflow-hidden cursor-pointer"
+            data-img="https://readdy.ai/api/search-image?query=wedding%20dance%20performance%20at%20Indian%20wedding%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=12&orientation=squarish"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=wedding%20dance%20performance%20at%20Indian%20wedding%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=12&orientation=squarish"
+              alt="Dance Performance"
+              class="w-full h-80 object-cover object-top"
+            />
+          </div>
+        </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      <!-- 1 -->
-      <div class="gallery-item rounded-lg overflow-hidden cursor-pointer transform transition duration-300 hover:scale-105" data-aos="zoom-in">
-        <img
-          src="https://readdy.ai/api/search-image?query=elegant%20Indian%20wedding%20ceremony%20with%20bride%20and%20groom%20in%20traditional%20attire%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=4&orientation=squarish"
-          alt="Wedding Ceremony"
-          class="w-full h-80 object-cover object-top"
-        />
+      <div class="text-center mt-12 fade-in">
+  <button
+    class="glow-button bg-white text-black font-medium px-8 py-3 !rounded-button text-lg hover:bg-black hover:text-white transition-all duration-300 whitespace-nowrap"
+  >
+    View Full Gallery
+  </button>
+</div>
+
+        </div>
       </div>
+      
+    </section>
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const galleryItems = document.querySelectorAll(".gallery-item");
 
-      <!-- 2 -->
-      <div class="gallery-item rounded-lg overflow-hidden cursor-pointer transform transition duration-300 hover:scale-105" data-aos="zoom-in">
-        <img
-          src="https://readdy.ai/api/search-image?query=romantic%20pre-wedding%20photoshoot%20of%20Indian%20couple%20in%20beautiful%20location%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=5&orientation=squarish"
-          alt="Pre-Wedding Shoot"
-          class="w-full h-80 object-cover object-top"
-        />
-      </div>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("hovered");
+          }
+        });
+      },
+      {
+        threshold: 0.5, // Adjust how much of the element should be visible
+      }
+    );
 
-      <!-- 3 -->
-      <div class="gallery-item rounded-lg overflow-hidden cursor-pointer transform transition duration-300 hover:scale-105" data-aos="zoom-in">
-        <img
-          src="https://readdy.ai/api/search-image?query=emotional%20moment%20during%20Indian%20wedding%20with%20family%20members%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=6&orientation=squarish"
-          alt="Emotional Moment"
-          class="w-full h-80 object-cover object-top"
-        />
-      </div>
-
-      <!-- 4 -->
-      <div class="gallery-item rounded-lg overflow-hidden cursor-pointer transform transition duration-300 hover:scale-105" data-aos="zoom-in">
-        <img
-          src="https://readdy.ai/api/search-image?query=traditional%20Indian%20wedding%20rituals%20with%20bride%20and%20groom%20in%20traditional%20attire%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=7&orientation=squarish"
-          alt="Traditional Rituals"
-          class="w-full h-80 object-cover object-top"
-        />
-      </div>
-
-      <!-- 5 -->
-      <div class="gallery-item rounded-lg overflow-hidden cursor-pointer transform transition duration-300 hover:scale-105" data-aos="zoom-in">
-        <img
-          src="https://readdy.ai/api/search-image?query=elegant%20wedding%20reception%20setup%20for%20Indian%20wedding%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=8&orientation=squarish"
-          alt="Reception Setup"
-          class="w-full h-80 object-cover object-top"
-        />
-      </div>
-
-      <!-- 6 -->
-      <div class="gallery-item rounded-lg overflow-hidden cursor-pointer transform transition duration-300 hover:scale-105" data-aos="zoom-in">
-        <img
-          src="https://readdy.ai/api/search-image?query=bride%20getting%20ready%20for%20Indian%20wedding%20with%20dramatic%20lighting%20and%20rich%20colors%20professional%20photography%20high%20quality%20emotional%20moment%20luxury%20setting%20cinematic%20color%20grading&width=800&height=800&seq=9&orientation=squarish"
-          alt="Bride Getting Ready"
-          class="w-full h-80 object-cover object-top"
-        />
-      </div>
-
-      <!-- 7 -->
-      <div class="gallery-item rounded-lg overflow-hidden cursor-pointer transform transition duration-300 hover:scale-105" data-aos="zoom-in">
-        <img
-          src="https://readdy.ai/api/search-image?query=wedding%20jewelry%20and%20accessories%20for%20Indian%20brides&width=800&height=800&seq=10&orientation=squarish"
-          alt="Wedding Jewelry"
-          class="w-full h-80 object-cover object-top"
-        />
-      </div>
-
-      <!-- 8 -->
-      <div class="gallery-item rounded-lg overflow-hidden cursor-pointer transform transition duration-300 hover:scale-105" data-aos="zoom-in">
-        <img
-          src="https://readdy.ai/api/search-image?query=wedding%20couple%20portrait%20at%20sunset%20with%20dramatic%20lighting&width=800&height=800&seq=11&orientation=squarish"
-          alt="Sunset Portrait"
-          class="w-full h-80 object-cover object-top"
-        />
-      </div>
-
-      <!-- 9 -->
-      <div class="gallery-item rounded-lg overflow-hidden cursor-pointer transform transition duration-300 hover:scale-105" data-aos="zoom-in">
-        <img
-          src="https://readdy.ai/api/search-image?query=wedding%20dance%20performance%20at%20Indian%20wedding&width=800&height=800&seq=12&orientation=squarish"
-          alt="Dance Performance"
-          class="w-full h-80 object-cover object-top"
-        />
-      </div>
-    </div>
-
-    <div class="text-center mt-12 fade-in" data-aos="fade-up">
-      <button
-        class="glow-button bg-white text-black font-medium px-8 py-3 !rounded-button text-lg hover:bg-black hover:text-white transition-all duration-300 whitespace-nowrap"
-      >
-        View Full Gallery
-      </button>
-    </div>
-  </div>
-</section>
-
-<!-- AOS Script (before </body>) -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({
-    once: true,
-    duration: 800,
-    easing: 'ease-in-out',
+    galleryItems.forEach((item) => {
+      observer.observe(item);
+    });
   });
 </script>
 
